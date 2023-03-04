@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NamesService } from './services/names.service';
-import { Name, ResponseName } from './types/types';
+import { Name } from './types/types';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,7 +33,7 @@ export class AppComponent {
   getDeleteName(name: string) {
     this.namesService.deleteData(name).subscribe((response) => {
       console.log(response);
-      this.names = this.names.filter((item) => item.name !== name);
+      // this.names = this.names.filter((item) => item.name !== name);
     });
   }
 
