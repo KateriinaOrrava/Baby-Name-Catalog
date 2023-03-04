@@ -1,0 +1,33 @@
+.all_name__container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .single_name__container {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    align-items: center;
+    justify-items: center;
+    background-color: #fffcc9;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+  .single_name__gender {
+    background-color: #d6fbe4;
+    padding: 5px 5px;
+    border-radius: 5px;
+  }
+  .deleteElement_button{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8cbd1;
+      padding: 5px 5px;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 5px;
+      border:none
+  }
+  

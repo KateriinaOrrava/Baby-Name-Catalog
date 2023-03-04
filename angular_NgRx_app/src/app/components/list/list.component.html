@@ -1,1 +1,13 @@
-<p>list works!</p>
+<br />
+<div class="container all_name__container">
+  <div
+    *ngFor="let nameElement of namesList; let i = index"
+    class="d-flex container single_name__container"
+  >
+    <div class="single_name__gender">{{ nameElement.gender }}</div>
+    <div class="single_name__name">{{ nameElement.name }}</div>
+    <div class="single_name__delete">
+      <button (click)="deleteName(nameElement.name)" class="deleteElement_button">✕</button>
+    </div>
+  </div>
+</div>

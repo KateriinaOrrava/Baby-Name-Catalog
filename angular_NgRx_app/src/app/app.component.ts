@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NamesService } from './services/names.service';
-import { Name, ResponseName } from './types/type';
+import { Name, ResponseName } from './types/types';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

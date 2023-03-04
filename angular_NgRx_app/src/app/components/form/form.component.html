@@ -1,1 +1,48 @@
-<p>form works!</p>
+<form #nameForm="ngForm" (ngSubmit)="onNameCreate()" class="mb-3 formWrapper">
+    <div class="formElementWrapper">
+      <input
+        type="text"
+        title="write a name"
+        name="name"
+        ngModel
+        required
+        #formName="ngModel"
+        class="form-control"
+      />
+  
+      <div>
+        <small *ngIf="formName.invalid && formName.touched"
+          >Name is a required field!</small
+        >
+      </div>
+    </div>
+    <div class="formElementWrapper">
+      <select
+        name="dropdown"
+        title="select gender"
+        name="gender"
+        ngModel
+        required
+        #formGender="ngModel"
+        class="form-control"
+      >
+        <option value="boy" selected>boy</option>
+        <option value="girl">girl</option>
+      </select>
+  
+      <div>
+        <small *ngIf="formGender.invalid && formGender.touched"
+          >Gender is a required field!</small
+        >
+      </div>
+    </div>
+    <input
+      type="submit"
+      name="submit"
+      value="Submit"
+      class="primary"
+      [disabled]="nameForm.invalid"
+      class="btn btn-primary"
+    />
+  </form>
+  

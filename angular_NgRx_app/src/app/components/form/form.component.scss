@@ -1,0 +1,14 @@
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: red 1px solid;
+}
+small {
+  color: red;
+}
+.formWrapper {
+  display: flex;
+  gap: 10px;
+}
+.formElementWrapper {
+  width: 100%;
+}
