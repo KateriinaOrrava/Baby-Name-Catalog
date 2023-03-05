@@ -6,4 +6,4 @@ const nameSchema = new Schema({
   gender: String,
 });
 
-export default mongoose.model('Name', nameSchema);
+export default mongoose.model('Name', nameSchema, "names");
