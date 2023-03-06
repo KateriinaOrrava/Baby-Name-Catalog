@@ -1,6 +1,6 @@
 # Catalog Application for Baby Names
 This is a catalog application built using Angular, TypeScript, Ngrx, SCSS, and HTML. The application is designed to display baby girl, baby boy, and gender-neutral names along with their meanings. The application also allows the user to add and delete names.
-
+  <img src='https://github.com/KateriinaOrrava/25.MD/blob/main/LK_BabyName_Gif.gif' width='400' tilte='names'>
 ## Features
 Display baby girl names with meanings
 Display baby boy names with meanings
