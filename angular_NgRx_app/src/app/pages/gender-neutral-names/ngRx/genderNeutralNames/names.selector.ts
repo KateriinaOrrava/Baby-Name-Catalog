@@ -8,9 +8,9 @@ export const selectNeutralNames =
 export const selectAppState = createFeatureSelector<AppState>('appState');
 export const selectNameByName = (name: string) =>
   createSelector(selectNeutralNames, (names: GenderNeutralNames[]) => {
-    var nameByName = names.filter((_) => _.name == name);
-    if (name.length == 0) {
+    let nameByName = names.filter((_) => _.name == name);
+    if (nameByName.length == 0) {
       return null;
     }
-    return name[0];
+    return nameByName[0];
   });

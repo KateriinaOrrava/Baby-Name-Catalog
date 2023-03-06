@@ -36,8 +36,8 @@ export class GenderNeutralNamesComponent implements OnInit {
       })
     );
     let apiStatus$ = this.appStore.pipe(select(selectAppState));
-    apiStatus$.subscribe((apState) => {
-      if (apState.apiStatus == 'success') {
+    apiStatus$.subscribe((appState) => {
+      if (appState.apiStatus == 'success') {
         this.appStore.dispatch(
           setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
         );

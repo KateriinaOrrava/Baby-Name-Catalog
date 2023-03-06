@@ -7,13 +7,16 @@ import { Name } from 'src/app/types/types';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
+
   @Output() newItemEvent = new EventEmitter<string>();
+  
   @Input() namesList: Name[] = [];
 
   constructor() {}
   sendNameToDelete(val: string) {
     this.newItemEvent.emit(val);
   }
+
   ngOnInit(): void {
     console.log('fromListComponent', this.namesList);
   }
