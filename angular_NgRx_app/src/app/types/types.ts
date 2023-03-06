@@ -8,7 +8,6 @@ export type Name = {
     _id: string;
   };
   export type GenderNeutralNames = {
-    name: String,
-    meaning: String,
-    _id: string;
+    name: string,
+    meaning: string,
   };

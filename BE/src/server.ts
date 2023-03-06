@@ -86,10 +86,11 @@ app.get("/genderNeutralNames", async (req: Request, res: Response) => {
     throw error;
   }
 });
-app.get(
-  "/genderNeutralNames/nameToDelete/:name",
+app.delete(
+  "/genderNeutralNamesToDelete/:name",
   async ({ params }: Request, res: Response) => {
     try {
+      console.log(params);
       await NeutralName.deleteOne({ name: params.name });
     } catch (error) {
       throw error;

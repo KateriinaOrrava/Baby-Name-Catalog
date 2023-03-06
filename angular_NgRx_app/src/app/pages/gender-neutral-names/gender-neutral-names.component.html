@@ -10,10 +10,21 @@
   gender, so the concept of a "gender-neutral" name is constantly evolving.
 </p>
 <p>counter works!</p>
-<!-- <button (click)="increment()">Increment</button> -->
 
-<div>Current Count: {{ genderNeutralNames$ | async }}</div>
+<div class="container mt-2">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let nameItem of names$ | async">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-name">{{ nameItem.name }}</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-meaning">{{ nameItem.meaning }}</p>
+        </div>
 
-<!-- <button (click)="decrement()">Decrement</button> -->
-
-<!-- <button (click)="reset()">Reset Counter</button> -->
+        <button class="btn btn-dark" (click)="deleteName(nameItem.name)">X</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-add-neutral-name></app-add-neutral-name>

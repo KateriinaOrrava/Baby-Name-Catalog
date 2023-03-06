@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Name, ResponseName } from '../types/types';
+import { GenderNeutralNames, Name, ResponseName } from '../types/types';
 import { Observable } from 'rxjs';
 
 // type NameResponse
@@ -21,5 +21,24 @@ export class NamesService {
   deleteData(name: string) {
     console.log('server got an element: ', name);
     return this.http.delete<Name>(`http://localhost:3004/nameToDelete/${name}`);
+  }
+  //gender neutral names
+  getNeutralNameData() {
+    return this.http.get<GenderNeutralNames[]>(
+      `http://localhost:3004/genderNeutralNames`
+    );
+  }
+  addNeutralNameData(newNameItem: GenderNeutralNames) {
+    console.log('service has', newNameItem);
+    return this.http.post<GenderNeutralNames>(
+      'http://localhost:3004/genderNeutralNames/addName',
+      newNameItem
+    );
+  }
+  deleteNeutralNameData(name: string) {
+    console.log('server got an element: ', name);
+    return this.http.delete(
+      `http://localhost:3004/genderNeutralNamesToDelete/${name}`
+    );
   }
 }

@@ -33,7 +33,7 @@ export class AppComponent {
   getDeleteName(name: string) {
     this.namesService.deleteData(name).subscribe((response) => {
       console.log(response);
-      // this.names = this.names.filter((item) => item.name !== name);
+      this.names = this.names.filter((item) => item.name !== name);
     });
   }
 
@@ -41,8 +41,8 @@ export class AppComponent {
     this.namesService.addData(nameItem).subscribe((nameItem) => {
       
       this.names.push(nameItem)
-      console.log(this.names.push(nameItem), this.names)
-      return this.names
+      // console.log(this.names.push(nameItem), this.names)
+      // return this.names
     });
 
   }
