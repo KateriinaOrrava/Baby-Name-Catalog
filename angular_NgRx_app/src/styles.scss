@@ -1,25 +1,23 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+* {
+  font-family: "Architects Daughter";
+}
+
 html,
 header {
   width: 100%;
 }
-html{
-}
-header{
+header {
   padding-top: 30px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-body {height: 100%;
+body {
   border: 1px solid beige;
-  display:block;
+  display: block;
   max-width: 80%;
   margin: 0 auto;
   font-family: "Architects Daughter", cursive;
-}
-* {
-  font-family: "Architects Daughter";
 }

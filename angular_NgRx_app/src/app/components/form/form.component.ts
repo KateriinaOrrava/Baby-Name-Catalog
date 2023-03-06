@@ -22,5 +22,6 @@ export class FormComponent implements OnInit {
   onNameCreate() {
     const newNameItem: Name = this.form.value;
     this.addNameItem(newNameItem)
+    this.form.resetForm();
   }
 }

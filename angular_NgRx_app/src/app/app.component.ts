@@ -14,36 +14,37 @@ export class AppComponent {
   constructor(private namesService: NamesService) {}
 
   getData() {
-    this.namesService.getData(this.gender).subscribe((response) => {
+    this.namesService.getNames(this.gender).subscribe((response) => {
       this.names = response;
     });
   }
 
   ngOnInit(): void {
-    this.getData();
+    this.namesService.getNames(this.gender).subscribe((data) => {
+      this.names = data;
+    });
   }
 
   switchGenderMain(changedGender: string) {
     this.gender = changedGender;
-    this.namesService.getData(this.gender).subscribe((response) => {
+    this.namesService.getNames(this.gender).subscribe((response) => {
       this.names = response;
     });
   }
 
   getDeleteName(name: string) {
-    this.namesService.deleteData(name).subscribe((response) => {
+    this.namesService.deleteName(name).subscribe((response) => {
       console.log(response);
       this.names = this.names.filter((item) => item.name !== name);
     });
   }
 
   addNameMain(nameItem: Name) {
-    this.namesService.addData(nameItem).subscribe((nameItem) => {
-      this.names.push(nameItem)
+    this.namesService.addName(nameItem).subscribe((response) => {
+      this.names.push(response);
       // console.log(this.names.push(nameItem), this.names)
-      this.names.push(nameItem)
-      return this.names
+      this.names.push(nameItem);
+      return this.names;
     });
-
   }
 }

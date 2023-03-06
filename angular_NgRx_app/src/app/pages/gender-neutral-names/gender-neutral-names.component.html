@@ -1,30 +1,38 @@
-<h2>GENDER NEUTRAL NAMES</h2>
-<p>
-  Here are ten popular gender-neutral names: Avery, Riley, Jordan, Morgan,
-  Taylor, Casey, Jamie, Hayden, Alex, Quinn. <br />
-  It's important to note that what is considered a gender-neutral name can vary
-  depending on cultural and regional contexts. These names may be more commonly
-  used as gender-neutral in some places, while in other places they may be more
-  commonly associated with one gender or the other. Additionally, some parents
-  choose to use traditionally gendered names for their child regardless of
-  gender, so the concept of a "gender-neutral" name is constantly evolving.
-</p>
-<p>counter works!</p>
+<div class="section-gender-neutral-content">
+  <h2  class="section-gender-neutral-content__name--heading">GENDER NEUTRAL NAMES</h2>
+  <div class="section-gender-neutral-content__name--text">
+    <p>
+      Here are ten popular gender-neutral names: Avery, Riley, Jordan, Morgan,
+      Taylor, Casey, Jamie, Hayden, Alex, Quinn. <br />
+      It's important to note that what is considered a gender-neutral name can
+      vary depending on cultural and regional contexts. These names may be more
+      commonly used as gender-neutral in some places, while in other places they
+      may be more commonly associated with one gender or the other.
+      Additionally, some parents choose to use traditionally gendered names for
+      their child regardless of gender, so the concept of a "gender-neutral"
+      name is constantly evolving.
+    </p>
+  </div>
 
-<div class="container mt-2">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let nameItem of names$ | async">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-name">{{ nameItem.name }}</h5>
-        </div>
-        <div class="card-body">
-          <p class="card-meaning">{{ nameItem.meaning }}</p>
-        </div>
+  <div class="section-gender-neutral-content__name--elements container mt-2">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let nameItem of names$ | async">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-name">{{ nameItem.name }}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-meaning">{{ nameItem.meaning }}</p>
+          </div>
 
-        <button class="btn btn-dark" (click)="deleteName(nameItem.name)">X</button>
+          <button class="btn btn-dark" (click)="deleteName(nameItem.name)">
+            X
+          </button>
+        </div>
       </div>
     </div>
   </div>
+  <div class="section-gender-neutral-content__name--add-new">
+    <app-add-neutral-name></app-add-neutral-name>
+  </div>
 </div>
-<app-add-neutral-name></app-add-neutral-name>

@@ -102,16 +102,29 @@ app.post(
   `/genderNeutralNames/addName`,
   async ({ body }: Request, res: Response) => {
     try {
-      await NeutralName.create({
+      const result = await NeutralName.create({
         name: body.name,
         meaning: body.meaning,
       });
+      res.status(200).send(result);
       console.log("Name added!");
     } catch (error) {
       throw error;
     }
   }
 );
+
+// app.post(
+//   "/animals",
+//   async ({ body }: Request<undefined, undefined, Animal>, res: Response) => {
+//     try {
+//       const result = await Animal.create(body);
+//       res.status(200).send(result);
+//     } catch (error) {
+//       res.status(500).json(error);
+//     }
+//   }
+// );
 
 app.listen(3004, () => {
   console.log("Application started on port 3004!");

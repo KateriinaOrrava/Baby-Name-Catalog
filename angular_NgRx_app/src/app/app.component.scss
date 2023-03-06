@@ -1,3 +1,6 @@
+body{
+  min-height: 100%;
+}
 header,
 footer {
   background-color: beige;
@@ -7,10 +10,10 @@ footer {
   padding: 30px 30px;
   text-align: center;
 }
-header button .button{
+header button .button {
   background-color: #fdd641;
 }
-nav a .button{
+nav a .button {
   background-color: #fdd641;
 }
 .content-container {
@@ -19,7 +22,7 @@ nav a .button{
 .content-container__half {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .app-container {
   display: flex;
@@ -28,7 +31,6 @@ nav a .button{
 }
 
 .button {
-
   background-color: #eed15d;
   border-radius: 6px;
   border: 1px solid #dcdcdc;
@@ -42,7 +44,7 @@ nav a .button{
 
   outline: 0;
 }
-.activebutton {
+.activeButton {
   box-shadow: inset 0 1px 0 0 #dcecfb;
   background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
   border: 1px solid #84bbf3;
