@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import {  select, Store } from '@ngrx/store';
 import { AppState } from 'src/app/app-ngrx/app.action';
 import { GenderNeutralNames } from 'src/app/types/types';
@@ -20,7 +21,8 @@ export class AddNeutralNameComponent {
     name: '',
     meaning: '',
   };
-
+  @ViewChild('nameForm')
+  form!: NgForm;
   ngOnInit(): void {
   }
 

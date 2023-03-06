@@ -3,13 +3,37 @@
   <legend>Add A New Gender Neutral Name</legend>
   <div class="mb-3">
     <label for="txtBookName" class="form-label">Name</label>
-    <input type="text" [(ngModel)]="nameForm.name" class="form-control"
-    id="txtBookName" />
+    <input
+      type="text"
+      required
+      #formNeutralName="ngModel"
+      [(ngModel)]="nameForm.name"
+      class="form-control"
+      id="txtBookName"
+    />
+    <div>
+      <small *ngIf="formNeutralName.invalid && formNeutralName.touched"
+        >Name is a required field!</small
+      >
+    </div>
   </div>
   <div class="mb-3">
     <label for="txtAuthor" class="form-label">Meaning</label>
-    <input type="text" [(ngModel)]="nameForm.meaning" class="form-control"
-    id="txtAuthor" />
+    <input
+      type="text"
+      required
+      #formMeaning="ngModel"
+      [(ngModel)]="nameForm.meaning"
+      class="form-control"
+      id="txtAuthor"
+    />
+    <div>
+      <small *ngIf="formMeaning.invalid && formMeaning.touched"
+        >Gender is a required field!</small
+      >
+    </div>
   </div>
-  <button type="button" class="btn btn-dark" (click)="saveName()">Create</button>
+  <button type="button" [disabled]="formMeaning.invalid || formNeutralName.invalid" class="btn btn-dark" (click)="saveName()">
+    Create
+  </button>
 </div>
