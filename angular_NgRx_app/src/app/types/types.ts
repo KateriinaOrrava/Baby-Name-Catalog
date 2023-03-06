@@ -7,4 +7,8 @@ export type Name = {
     gender: 'boy' | 'girl';
     _id: string;
   };
-  
+  export type GenderNeutralNames = {
+    name: String,
+    meaning: String,
+    _id: string;
+  };

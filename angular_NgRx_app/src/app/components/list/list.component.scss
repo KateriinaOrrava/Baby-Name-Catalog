@@ -1,21 +1,22 @@
 .all_name__container {
     justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
   .single_name__container {
     display: flex;
     justify-content: space-between;
-    line-height: 2rem;
+    line-height: 1rem;
     align-items: center;
     justify-items: center;
-    background-color: #fffcc9;
-    padding: 10px 10px;
+    background-color: beige;
+    padding: 5px 5px;
     border-radius: 5px;
   }
   .single_name__gender {
-    background-color: #d6fbe4;
+    background-color: white;
     padding: 5px 5px;
     border-radius: 5px;
   }

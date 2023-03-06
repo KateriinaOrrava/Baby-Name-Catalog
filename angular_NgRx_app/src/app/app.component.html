@@ -1,32 +1,42 @@
-<nav>
-  <a class="button" routerLink="/about">Why names are so important?</a> |
-  <a class="button" routerLink="/gender-neutral-names"
-    >show gender neutral names</a
-  >
-  |  <a class="button" routerLink="/counter"
-  >counter</a
->
-</nav>
+<header>
+  <nav class="main-navigation">
+    <a class="button" routerLink="/about">Why names are so important?</a> |
+    <a class="button" routerLink="/gender-neutral-names"
+      >show gender neutral names</a
+    >
+    | <a class="button" routerLink="/counter">counter</a> |
+  </nav>
+  <div class="main-header">
+    <h1>
+      <span>B</span><span>A</span><span>B</span><span>Y </span><span>👶</span
+      ><span>N</span><span>A</span><span>M</span><span>E</span><span>👶</span
+      ><span>C</span><span>A</span><span>T</span><span>A</span><span>L</span
+      ><span>O</span><span>G</span>
+    </h1>
+  </div>
+</header>
+<section class="app-content">
+  <div class="container-content mt-1 mb-3 container-fluid app-container">
+    <div class="container content-container">
+      <div class="container content-container__half">
+        <!-- <h1 class="'purple mb-3">BABY NAME CATALOG</h1> -->
 
-<div class="container-content mt-5 mb-5 container-fluid app-container">
-  <div class="container content-container">
-    <div class="container content-container__half">
-      <h1 class="'purple mb-3">BABY NAME CATALOG</h1>
-      <p>
-        The favorite names of the year are keeping things short and sweet, with
-        the occasional throwback, too! As the world’s spread of interest grows,
-        so does the spread of baby name choices.
-      </p>
-      <app-switch (newItemEvent)="switchGenderMain($event)"></app-switch>
+        <p>
+          The favorite names of the year are keeping things short and sweet,
+          with the occasional throwback, too! As the world’s spread of interest
+          grows, so does the spread of baby name choices.
+        </p>
+        <app-switch (newItemEvent)="switchGenderMain($event)"></app-switch>
 
-      <app-form (newItemEvent)="addNameMain($event)"> </app-form>
-    </div>
-    <div class="container content-container__half">
-      <app-list
-        [namesList]="this.names"
-        (newItemEvent)="getDeleteName($event)"
-      ></app-list>
+        <app-form (newItemEvent)="addNameMain($event)"> </app-form>
+      </div>
+      <div class="container content-container__half list">
+        <app-list
+          [namesList]="this.names"
+          (newItemEvent)="getDeleteName($event)"
+        ></app-list>
+      </div>
     </div>
   </div>
-</div>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</section>
