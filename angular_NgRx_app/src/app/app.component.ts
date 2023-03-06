@@ -39,10 +39,10 @@ export class AppComponent {
 
   addNameMain(nameItem: Name) {
     this.namesService.addData(nameItem).subscribe((nameItem) => {
-      
       this.names.push(nameItem)
       // console.log(this.names.push(nameItem), this.names)
-      // return this.names
+      this.names.push(nameItem)
+      return this.names
     });
 
   }

@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class NamesService {
+  loadYourNames() {
+    throw new Error('Method not implemented.');
+  }
   constructor(private http: HttpClient) {}
   getData(gender: string) {
     return this.http.get<ResponseName[]>(

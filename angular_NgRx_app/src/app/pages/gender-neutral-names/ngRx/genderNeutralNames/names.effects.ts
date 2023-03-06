@@ -13,7 +13,7 @@ import {
   saveNewNameAPISuccess,
   setAPIStatus,
 } from './names.actions';
-import { AppState } from '../../../../app-ngrx/appState';
+import { AppState } from 'src/app/app-ngrx/app.action';
 
 @Injectable()
 export class NamesEffect {
@@ -81,3 +81,4 @@ export class NamesEffect {
     );
   });
 }
+

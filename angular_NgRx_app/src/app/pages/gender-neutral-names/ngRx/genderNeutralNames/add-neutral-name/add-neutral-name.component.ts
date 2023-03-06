@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { select, Store } from '@ngrx/store';
-import { switchMap } from 'rxjs';
-import { AppState } from 'src/app/app-ngrx/appState';
+import {  select, Store } from '@ngrx/store';
+import { AppState } from 'src/app/app-ngrx/app.action';
 import { GenderNeutralNames } from 'src/app/types/types';
 import { invokeSaveNewNameAPI, setAPIStatus } from '../names.actions';
-import { selectAppState, selectNameByName } from '../names.selector';
+import { selectAppState } from '../names.selector';
 
 @Component({
   selector: 'app-add-neutral-name',
@@ -14,10 +12,8 @@ import { selectAppState, selectNameByName } from '../names.selector';
 })
 export class AddNeutralNameComponent {
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
     private store: Store,
-    private appStore: Store<AppState>
+    private appStore: Store<AppState>,
   ) {}
 
   nameForm: GenderNeutralNames = {
@@ -30,13 +26,13 @@ export class AddNeutralNameComponent {
 
   saveName() {
     this.store.dispatch(invokeSaveNewNameAPI({ newNeutralName: this.nameForm }));
-    let apiStatus$ = this.appStore.pipe(select(selectAppState));
-    apiStatus$.subscribe((appState) => {
-      if (appState.apiStatus == 'success') {
-        this.appStore.dispatch(
-          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
-        );
-      }
-    });
+    // let apiStatus$ = this.appStore.pipe(select(selectAppState));
+    // apiStatus$.subscribe((appState) => {
+    //   if (appState.apiStatus == 'success') {
+    //     this.appStore.dispatch(
+    //       setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+    //     );
+    //   }
+    // });
   }
 }
